@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Add a scrollBar on the right side of the screen-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/titlle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:text="Are you a Naruto fan? Let's see!"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="#E65100"/>
+
+        <LinearLayout
+            android:id="@+id/quiz"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/titlle"
+            android:orientation="vertical">
+
+            <!--To enter the user name-->
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:id="@+id/name_field"
+                android:inputType="textCapWords"
+                android:hint="Name"/>
+
+            <!--To check if already watched the entire anime-->
+            <CheckBox
+                android:id="@+id/watch_all_seasons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:text="Did you watch all seasons of Naruto?" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginVertical="24dp"
+                android:text="QUIZ"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="#E65100"/>
+
+            <!--Question 1-->
+            <TextView
+                android:id="@+id/question_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1- Naruto's first teacher was Iruka." />
+
+            <!--To chouse the answer-->
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question_one"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/question_one_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="1,t"
+                    android:text="True" />
+
+                <RadioButton
+                    android:id="@+id/question_one_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="1,f"
+                    android:text="False" />
+            </RadioGroup>
+
+            <!--Question 2-->
+            <TextView
+                android:id="@+id/question_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="2- Naruto's favorite food is chocolate." />
+
+            <!--To chouse the answer-->
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question_one"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/question_two_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="2,t"
+                    android:text="True" />
+
+                <RadioButton
+                    android:id="@+id/question_two_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="2,f"
+                    android:text="False" />
+            </RadioGroup>
+
+            <!--Question 3-->
+            <TextView
+                android:id="@+id/question_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="3- Naruto's father was the Third Hokage."/>
+
+            <!--To chouse the answer-->
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question_one"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/question_three_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="3,t"
+                    android:text="True" />
+
+                <RadioButton
+                    android:id="@+id/question_three_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="3,f"
+                    android:text="False" />
+            </RadioGroup>
+
+            <!--Question 4-->
+            <TextView
+                android:id="@+id/question_four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="4- Shikamaru was the only student to pass the Chunin exame." />
+
+            <!--To chouse the answer-->
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question_one"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/question_four_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="4,t"
+                    android:text="True" />
+
+                <RadioButton
+                    android:id="@+id/question_four_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="4,f"
+                    android:text="False" />
+            </RadioGroup>
+
+            <!--Question 5-->
+            <TextView
+                android:id="@+id/question_five"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="5- Naruto was Gaara's first friend."/>
+
+            <!--To chouse the answer-->
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question_one"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/question_five_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="5,t"
+                    android:text="True" />
+
+                <RadioButton
+                    android:id="@+id/question_five_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="5,f"
+                    android:text="False" />
+            </RadioGroup>
+
+            <!--Question 6-->
+            <TextView
+                android:id="@+id/question_six"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="6- Jiraiya was writing a book about Sasuke."/>
+
+            <!--To chouse the answer-->
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question_one"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/question_six_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="6,t"
+                    android:text="True" />
+
+                <RadioButton
+                    android:id="@+id/question_six_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="6,f"
+                    android:text="False" />
+            </RadioGroup>
+
+            <!--Question 7-->
+            <TextView
+                android:id="@+id/question_seven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="7- Konohamaru kills two Pains."/>
+
+            <!--To chouse the answer-->
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question_one"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/question_seven_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="7,t"
+                    android:text="True" />
+
+                <RadioButton
+                    android:id="@+id/question_seven_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="7,f"
+                    android:text="False" />
+            </RadioGroup>
+
+            <!--Question 8-->
+            <TextView
+                android:id="@+id/question_eight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="8- Orochimaru is from Hidden Mist Village."/>
+
+            <!--To chouse the answer-->
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question_one"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/question_eight_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="8,t"
+                    android:text="True" />
+
+                <RadioButton
+                    android:id="@+id/question_eight_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="8,f"
+                    android:text="False" />
+            </RadioGroup>
+
+            <!--Question 9-->
+            <TextView
+                android:id="@+id/question_nine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="9- Naruto doesn't go to his Hokage's nomination."/>
+
+            <!--To chouse the answer-->
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question_one"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/question_nine_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="9,t"
+                    android:text="True" />
+
+                <RadioButton
+                    android:id="@+id/question_nine_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="9,f"
+                    android:text="False" />
+            </RadioGroup>
+
+            <!--Question 10-->
+            <TextView
+                android:id="@+id/question_ten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="10- Kakashi looses his sharingan."/>
+
+            <!--To chouse the answer-->
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question_one"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/question_ten_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="10,t"
+                    android:text="True" />
+
+                <RadioButton
+                    android:id="@+id/question_ten_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addAnswer"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="16dp"
+                    android:tag="10,f"
+                    android:text="False" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!--Submit the quiz-->
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/quiz"
+            android:layout_centerHorizontal="true"
+            android:text="Submit"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#000000"
+            android:layout_marginVertical="30dp"
+            android:onClick="checkAnswers"/>
+
+        <!--Shows the final results of the quiz whith name, the result of the checkBox and a message-->
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/submit_button"
+            android:layout_marginBottom="40dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:text="FINAL RESULTS:" />
+
+    </RelativeLayout>
+</ScrollView>
